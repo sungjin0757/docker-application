@@ -23,7 +23,7 @@ after_success:
   - docker push sungjin0757/docker-nginx
 
 deploy:
-  provide: elasticbeanstalk
+  provider: elasticbeanstalk
   region: "ap-northeast-2"  
   app: "docker-application"
   env: "Dockerapplication-env"

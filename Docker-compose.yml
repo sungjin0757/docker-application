@@ -1,4 +1,4 @@
-version: "3"
+version: "2.4"
 services:
   backend:
     image: sungjin0757/docker-backend
@@ -8,7 +8,7 @@ services:
       - ./backend:/app
     mem_limit: 128m
     environment:
-      MYSQL_HOST: mysql
+      MYSQL_HOST: docker-application-mysql.ce5wgqxt8e5z.ap-northeast-2.rds.amazonaws.com
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: sungjin0757
       MYSQL_DATABASE: myapp
