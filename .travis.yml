@@ -20,4 +20,4 @@ after_success:
 
   - docker push sungjin0757/docker-frontend
   - docker push sungjin0757/docker-backend
-  - docker push sungjin0757/nginx
+  - docker push sungjin0757/docker-nginx
