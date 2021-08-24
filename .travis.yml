@@ -25,10 +25,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "ap-northeast-2"  
-  app: "docker-application-v1"
-  env: "Dockerapplicationv1-env"
+  app: "docker-application-v2"
+  env: "Dockerapplicationv2-env-1"
   bucket_name: elasticbeanstalk-ap-northeast-2-810012734123
-  bucket_path: "docker-application-v1"
+  bucket_path: "docker-application-v2"
   on:
     branch: master
 
