@@ -21,3 +21,16 @@ after_success:
   - docker push sungjin0757/docker-frontend
   - docker push sungjin0757/docker-backend
   - docker push sungjin0757/docker-nginx
+
+deploy:
+  provide: elasticbeanstalk
+  region: "ap-northeast-2"  
+  app: "docker-application"
+  env: "Dockerapplication-env"
+  bucket_name: elasticbeanstalk-ap-northeast-2-810012734123
+  bucket_path: "docker-application"
+  on:
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
