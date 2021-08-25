@@ -22,6 +22,16 @@ services:
     stdin_open: true
     mem_limit: 128m
 
+  nginx:
+    restart: always
+    image: sungjin0757/docker-nginx
+    ports:
+      - "80:80"
+    mem_limit: 128m
+    links:
+      - frontend
+      - backend
+
   # mysql:
   #   build: ./mysql
   #   restart: always
@@ -36,12 +46,3 @@ services:
   #     MYSQL_DATABASE: myapp
       
 
-  nginx:
-    restart: always
-    image: sungjin0757/docker-nginx
-    ports:
-      - "80:80"
-    mem_limit: 128m
-    links:
-      - frontend
-      - backend
