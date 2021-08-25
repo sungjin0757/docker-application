@@ -13,10 +13,10 @@ app.listen(5000,()=>{
     console.log("application start in port 5000.")
 })
 
-// db.pool.query('CREATE TABLE lists (id INTEGER AUTO_INCREMENT,value TEXT,PRIMARY KEY (id))',
-// (err,results,field)=>{
-//         console.log(results)
-//     })
+db.pool.query('CREATE TABLE lists (id INTEGER AUTO_INCREMENT,value TEXT,PRIMARY KEY (id))',
+(err,results,field)=>{
+        console.log(results)
+    })
 
 app.get('/api/values',function(req,res){
     db.pool.query('SELECT * FROM lists;',
