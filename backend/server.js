@@ -18,15 +18,6 @@ db.pool.query('CREATE TABLE lists (id INTEGER AUTO_INCREMENT,value TEXT,PRIMARY 
         console.log(results)
     })
 
-app.get('/api/values',function(req,res){
-    db.pool.query('SELECT * FROM lists;',
-    (err,results,fileds)=>{
-        if(err)
-        return res.status(500).send(err);
-        else
-        return res.json(results)
-    })
-})
 
 app.post('/api/values',function(req,res){
     var str=req.body.value+" Hello";
