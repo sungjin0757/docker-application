@@ -5,6 +5,10 @@ import axios from 'axios';
 
 function App() {
 
+  const [lists, setLists] = useState([])
+  const [value, setValue] = useState("")
+
+
   const changeHandler = (event) => {
     setValue(event.currentTarget.value)
   }
