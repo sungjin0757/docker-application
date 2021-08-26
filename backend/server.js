@@ -13,10 +13,10 @@ app.listen(5000,()=>{
     console.log("application start in port 5000.")
 })
 
-// db.pool.query('DROP TABLE IF EXISTS lists;',
-// (err,results,field)=>{
-//         console.log(results)
-//     })
+db.pool.query('DROP TABLE IF EXISTS lists;',
+(err,results,field)=>{
+        console.log(results)
+    })
 
 db.pool.query('CREATE TABLE lists (id INTEGER AUTO_INCREMENT,value TEXT,PRIMARY KEY (id))',
 (err,results,field)=>{
@@ -40,7 +40,7 @@ app.post('/api/values',function(req,res){
         if(err)
         return res.status(500).send(err);
         else
-        return res.json({success: true, value: req.body.value})
+        return res.json({success: true, value: str})
     })
 
 })
