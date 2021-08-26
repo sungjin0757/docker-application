@@ -8,4 +8,9 @@ const pool=mysql.createPool({
     port: process.env.MYSQL_PORT
 })
 
+pool.query('DROP TABLE IF EXISTS lists;',
+(err,results,field)=>{
+        console.log(results)
+    })
+
 exports.pool=pool;
