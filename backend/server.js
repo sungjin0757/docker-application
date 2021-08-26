@@ -1,6 +1,5 @@
 
 const express=require("express");
-const bodyParser=require('body-parser');
 const db=require("./db");
 
 const app=express();
@@ -31,7 +30,7 @@ app.get('/api/values',function(req,res){
 
 app.post('/api/values',function(req,res){
     var str=req.body.value+" Hello";
-    db.pool.query('INSERT INTO lists (value) VALUES("${str}");',
+    db.pool.query('INSERT INTO lists (value) VALUES(?);',str,
     (err,results,fields)=>{
         if(err)
         return res.status(500).send(err);
